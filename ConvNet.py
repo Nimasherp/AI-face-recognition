@@ -67,13 +67,13 @@ class Yolo(nn.Module):
             
 
 # let's test it with a random batch 
-dataset = files.ImageData(parameters.TRAININGPATH, parameters.LABELPATH)
-image_tensor, label_tensor = dataset[0]
+# dataset = files.ImageData(parameters.TRAININGPATH, parameters.LABELPATH)
+# image_tensor, label_tensor = dataset[0]
 
-image_tensor= image_tensor.unsqueeze(0) # Because the Network expect a batchsize, so let's make it 1 for now
+# image_tensor= image_tensor.unsqueeze(0) # Because the Network expect a batchsize, so let's make it 1 for now
 
-flattensize = 7*7*1024
-yolo = Yolo(3, flattenSize = flattensize, fullySize = 4096, outputSize = math.prod(parameters.OUTPUT_SIZE))
-output = parameters.reshape(Yolo.forward(yolo, image_tensor))
-print(output.shape) # expect 7 * 7 * 10 and times 1 for the batch again
+# flattensize = 7*7*1024
+# yolo = Yolo(3, flattenSize = flattensize, fullySize = 4096, outputSize = math.prod(parameters.OUTPUT_SIZE))
+# output = parameters.reshape(Yolo.forward(yolo, image_tensor))
+# print(output.shape) # expect 7 * 7 * 10 and times 1 for the batch again
 
