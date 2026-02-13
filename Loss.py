@@ -51,7 +51,6 @@ class Loss(nn.Module):
     def forward(self, output, expectedOutput):
 
         S = output.shape[1]
-        print(S)
         loss_coord = 0
         loss_conf = 0
         loss_noobj = 0
