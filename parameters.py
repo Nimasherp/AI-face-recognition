@@ -47,4 +47,6 @@ NUM_EPOCH = 10
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
+CONFIDENCE_TRESHOLD = 0.5
+
 OUTPUT_SIZE = [7, 7, (NB_OF_ANCHORBOXES * BOUNDING_BOXES_PARAMETERS) ]

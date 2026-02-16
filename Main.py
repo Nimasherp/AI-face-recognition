@@ -48,6 +48,8 @@ def main():
         
         print(f"Mean loss was {sum(mean_loss) / len(mean_loss)}")
         print(f"mean loss type {((mean_loss))}", f" type of len : {(len(mean_loss))}")
+    
+    return model
 
 
 
