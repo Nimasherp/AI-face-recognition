@@ -34,7 +34,9 @@ class ImageData(Dataset):
         image_filename = self.image_filenames[idx]
         name = os.path.splitext(image_filename)[0]
 
-        image = cv2.imread(self.image_dir + image_filename)
+        image_path = self.image_dir + image_filename
+
+        image = cv2.imread(image_path)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # in case we mix up 
         image = reshape(image)
         
@@ -59,6 +61,6 @@ class ImageData(Dataset):
         image = image / 255.0
 
 
-        return torch.from_numpy(image).permute(2, 0, 1).float(), label_to_coord
+        return torch.from_numpy(image).permute(2, 0, 1).float(), label_to_coord, image_path
         
     
